@@ -1,0 +1,27 @@
+{
+    "name": "Projeto receita",
+    "short_name": "PR",
+    "icons": [
+        {
+            "src": "images/onca.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        },
+        {
+            "src": "images/quadrado.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "images/bird.png",
+            "sizes": "144x144",
+            "type": "image/png",
+            "purpose": "any"
+        }
+    ],
+    "lang": "pt-BR",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "white",
+    "theme_color": "white"
+}
