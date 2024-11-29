@@ -5,15 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="apple-touch-icon" href="images/sonic.png" />
     <meta name="theme-color" content="white"/>
-    <title>Receitas</title>
+    <title>PWA</title>
     <link rel="stylesheet" href="css/style.css"/>
     <link rel="manifest" href="manifest.json"/>
     <link rel="icon" href="favicon.ico" />
+    
+    <script type="module" src="js/db.js"></script>
+
     <style>
       
         .header-fixa {
             position: fixed;
             top: 0;
+
+
             left: 0;
             width: 100%;
             background-color: #fa88f0;
@@ -44,13 +49,23 @@
     </style>
 </head>
 <body>
-    <div class="header-fixa">
-        <a href="index.html"><h1>Inicio</h1></a>
-        <a href="massas.html"><h1>Massas</h1></a>
-        <a href="doces.html"><h1>Doces</h1></a>
-        <a href="carnes.html"><h1>Carnes</h1></a>
+    <div style="text-align: center;">
+    
+        <button id ="btnSalvar"> Salvar</button>
+        
+        <button id ="btnListar"> Listar</button>
     </div>
 
+    <form id="userForm">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required><br><br>
+
+        <label for="idade">Idade:</label>
+        <input type="number" id="idade" name="idade" required><br><br>
+
+        <button type="submit">Enviar</button>
+    </form>
+    
     <script src="/js/main.js"></script>
 </body>
 </html>
