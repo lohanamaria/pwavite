@@ -56,3 +56,30 @@ showResult("Banco de dados: " + JSON.stringify(value))
 function showResult(text){
     document.querySelector("output").innerHTML = text;
 }
+
+window.addEventListener("DOMContentLoaded", async event => {
+    await createDB();
+
+    const inputNome = document.getElementById("nome");
+    const inputIdade = document.getElementById("idade");
+    
+    document.getElementById("btnSalvar").addEventListener("click", () => addData(inputNome.value, inputIdade.value));
+    
+
+    document.getElementById("btnListar").addEventListener("click", getData);
+});
+
+async function addData(nome, idade) {
+    if (!nome || !idade) {
+        showResult("Por favor, preencha todos os campos.");
+        return;
+    }
+
+    const tx = await db.transaction('pessoas', 'readwrite');
+    const store = tx.objectStore('pessoas');
+
+    store.add({ nome: nome, idade: idade });
+
+    await tx.done;
+    showResult(`Dados de ${nome} salvos com sucesso!`);
+}
